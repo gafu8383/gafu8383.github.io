@@ -36,13 +36,30 @@
     </style>
 </head>
 <body>
-    <iframe src="https://discord.com/widget?id=1344266996572885094&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    <iframe src="https://discord.com/widget?id=1371403946270130228&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
     <div class="profile">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAZzoLYMSbwp7dlUvXTrsvmrDIffaXJPKltvmNQ58GHGu_XHyoJLGuC9Q&s=10" alt="Kamichita icon">
-        <h1>名前: kamichita</h1>
-        <p>年齢: 非公開
+        <!-- アイコンをGIFに変更 -->
+        <img src="https://raw.githubusercontent.com/gafu8383/guf/refs/heads/main/discord_fake_avatar_decorations_1750474769850.gif" alt="Kamichita icon">
+        <h1>id: kamichita</h1>
+        <p>年齢: 非公開</p>
         <p>ステータス: 暇</p>
         <p>趣味: 荒らしが好き❤️</p>
+        <p>一言: おぜう万歳</p>
     </div>
+
+    <!-- 音声再生（ループ・自動） -->
+    <audio id="bgm" src="https://raw.githubusercontent.com/gafu8383/guf/refs/heads/main/mao%20zedong%20propaganda%20music%20Red%20Sun%20in%20the%20Sky%202.mp3" autoplay loop></audio>
+    
+    <!-- 自動再生用スクリプト（スマホやブラウザ制限を一部回避） -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('bgm');
+            const play = () => {
+                audio.play().catch(() => {});
+            };
+            document.body.addEventListener('click', play, { once: true });
+        });
+    </script>
 </body>
 </html>
