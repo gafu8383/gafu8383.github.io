@@ -33,6 +33,35 @@
             color: #ff6347;
             text-decoration: none;
         }
+
+<!-- PushL tag start -->
+<script defer id="pushlScript" src="https://cdn.pushl.info/sites/1.1/js/pushl-subscription.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	PushL.init({
+		subscriptionAreaId: "subscription-area",
+		disableFloating: false, //false = default (show push subscription area), true = hide push subscription area
+		maxFontSize: "18px",
+		modalTtl: "通知を設定",
+		subscriptionBtnTxt: "通知を設定する",
+		subscriptionReasonTtl: 'プッシュ通知で応募情報を受け取ろう',
+		subscriptionReasonTxt: 'プッシュ通知をオンにすると<br>最新情報のお知らせが届きます',
+		categorySelectionTtl: "＜情報を欲しいカテゴリを選択＞",
+		subscriptionInfo:{},  // 例: {subscribed_user_id: xxxxx}
+		logoUrl: "https://pushl.info/img/brand/logo-main.svg",
+		logoWidth: "154px",
+		logoHeight: "30px",
+		siteNameJP: "Profile",
+		siteName: "profile-kamichita-f5-si",  // Do not change
+		swScope: "/",
+		backgroundcolor: "#003d7f",
+		foregroundColor: "#fff",
+		cssLocation: "" // You may specify your own CSS URL. (Note: this will disable loading of the default CSS.)
+    });
+});
+</script>
+<!-- PushL tag end -->
+        
     </style>
 </head>
 <body>
@@ -60,6 +89,18 @@
             };
             document.body.addEventListener('click', play, { once: true });
         });
-    </script>
+
+<!-- Service worker installation-->
+	if ('serviceWorker' in navigator) {
+  		window.addEventListener('load', function() {
+			navigator.serviceWorker.register('/sw.js', {scope: '/'}).then(function(registration) {
+				// console.log('Service Worker registered! Scope: ' + registration.scope);
+			}).catch(function(err) {
+				console.log('Service Worker registration failed: ' + err);
+    		});
+  		});
+	}
+  </script>
+									
 </body>
 </html>
